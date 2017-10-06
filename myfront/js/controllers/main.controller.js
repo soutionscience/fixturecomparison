@@ -7,28 +7,39 @@
   	console.log("test")
 
 
-  	$scope.dataset =[];
-    $scope.teams =[];
+  	
    
    
 
      this.$onInit = function(){
-       $scope.competionID = '444'
+       $scope.dataset =[];
+     $scope.teams =[];
+     
      	dataService.getLeagues().then(function(result){
+      
      		$scope.dataset = result.data;
-        console.log($scope.competionID)
-     	
+      
+             	
 
      	});
-          dataService.getTeams($scope.competionID).then(function(result){
-        $scope.teams = result.data;
+          
+      this.selectedLg= function(league){
+   
+     
+     
+       dataService.getTeams(league).then(function(result){
+        $scope.teams = result.data.teams;
+        // console.log($scope.teams)
        
 
       });
-
-     	console.log($scope.dataset)
-      console.log($scope.teams)
+     
+      
      }
+    
+     }
+     
+     
 
   }
 
