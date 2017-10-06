@@ -28,6 +28,15 @@
  	 	})
  	 }
 
+ 	 service.getFixtures = function(fixtures){
+ 	 	return $http({
+ 	 		headers:{'X-Auth-Token': 'a0e3c08f477f4a7c826355dfeaf56857'},
+ 	 		method: "Get",
+ 	 		dataType:'json',
+ 	 		url:(fixtures)
+ 	 	})
+ 	 }
+
  }
 
 })();

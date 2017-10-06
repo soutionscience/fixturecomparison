@@ -9,8 +9,14 @@
  </select>
 
   <select ng-model="selectedteams" ng-change="ctrl.selectedTm(selectedteams)">
- 	<option  ng-repeat="t in teams"   value="t.id">{{t.name}}</option>
+ 	<option  ng-repeat="t in teams"   value="{{t._links.fixtures.href}}">{{t.name}}</optio>
  	
+ </select>
+
+ <select ng-model="fixture" ng-change="ctrl.selectedfx(fixture)">
+ 	<option ng-repeat="f in fixtures">{{f.date}}</option>
+ 	
+
  </select>
 
 
@@ -39,7 +45,7 @@
 <!-- 	<select  ng-model="value" ng-options="item as item.label for item in items track by item.id" ng-model="selected" ng-value="x.id">
 buya</select> -->
 
-<div>
+<!-- <div>
   <form name="myForm">
     <label for="repeatSelect"> Repeat select: </label>
     <select name="repeatSelect" id="repeatSelect" 
@@ -49,7 +55,7 @@ buya</select> -->
   </form>
   <hr>
   <tt>model = {{data.model}}</tt><br/>
-</div>
+</div> -->
 	
 </section>
 
