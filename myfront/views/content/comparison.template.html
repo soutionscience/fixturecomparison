@@ -9,18 +9,20 @@
  </select>
 
   <select ng-model="selectedteams" ng-change="ctrl.selectedTm(selectedteams)">
- 	<option  ng-repeat="t in teams"   value="{{t._links.fixtures.href}}">{{t.name}}</optio>
+ 	<option  ng-repeat="t in teams"   value="{{t._links.fixtures.href}}">{{t.name}}</option>
  	
  </select>
 
- <select ng-model="fixture" ng-change="ctrl.selectedfx(fixture)">
- 	<option ng-repeat="f in fixtures">{{f.date}}</option>
- 	
+ <section>
+ 	<div class="fixtures">
+ 		<div ng-repeat="e in fixtures | limitTo : limit">{{e.date | date :  "dd.MM.y"}}</div>
+ 	</div>
 
- </select>
+ </section>
 
 
-</select>
+<section>
+	<button ng-click="addLimit()">Add More</button>
 </section>
 
 

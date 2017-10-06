@@ -7,6 +7,7 @@
   	console.log("test")
 
     $scope.selected = "mine"
+    var fixtureLimit =5
   	
    
    
@@ -15,6 +16,7 @@
 
        $scope.dataset =[];
      $scope.teams =[];
+      $scope.fixtures=[];
      dataService.getLeagues().then(function(result){
      $scope.dataset = result.data;
      console.log($scope.dataset)
@@ -28,17 +30,24 @@
        
 
       });
-
+ }
        this.selectedTm = function(team){
+        $scope.limit = fixtureLimit
         console.log(team)
         dataService.getFixtures(team).then(function(result){
-          $scope.fixtures= result.data
-          console.log($scope.fixtures.fixtures[0].awayTeamName)
+          $scope.fixtures= result.data.fixtures
+          console.log($scope.fixtures)
         })
        }
+
+         $scope.addLimit= function(){
+        $scope.limit= fixtureLimit + fixtureLimit
+        console.log("Added scope limit to :" + $scope.limit)
+       }
+     
      
       
-     }
+    
     
      }
      
