@@ -1,0 +1,17 @@
+<!--   <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+            <div id="myDropDown" class="drop-down-content">
+            <section ng-controller="mainCtrl">
+                 <div ng-repeat="e in dataset">
+
+                  <a href="">{{e.caption}}</a> 
+                </div>
+            </section>
+            </div>
+  </div> -->
+
+</div>
+<section ng-controller="mainCtrl">
+<select ng-model="competionID" ng-options="x.caption for x in dataset  track by x.id">{{x.id}}
+</select>
+</section>

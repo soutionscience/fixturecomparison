@@ -18,6 +18,16 @@
     // });
  	 }
 
+ 	 service.getTeams = function(competition){
+ 	 	return $http({
+ 	 		headers: { 'X-Auth-Token': 'a0e3c08f477f4a7c826355dfeaf56857' },
+ 	 		method:"GET",
+ 	 		dataType: 'json',
+ 	 		url:('http://api.football-data.org/v1/competitions/'+ competition +'/teams')
+
+ 	 	})
+ 	 }
+
  }
 
 })();

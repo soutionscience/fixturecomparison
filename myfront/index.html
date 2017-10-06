@@ -1,49 +1,70 @@
-<!DOCTYPE html>
-<html>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
-<head>
-	<title>Fixture Comparison</title>
-</head>
-<body ng-app="fixApp">
-	<div class="banner">
-		<div class="container">
-			<h4>fixture comparison</h4>
-		</div>
-	</div>
-	<div class=" container home-content">
-	<div class="logo"> 
-		<img src="#" height="50px" width="50px">
-	</div>
-<div class="stories">
-	<p>Fixture comparison allows you to compare the fixtures of two or more teams across different leagues. Compare teams across leagues with this amaizing comparison tool.</p>
-</div>
-</div>
+    <!DOCTYPE html>
+    <html>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+   
+   <link href="https://fonts.googleapis.com/css?family=Dosis|Lato" rel="stylesheet">
+    <head>
+    	<title>Fixture Comparison</title>
+    </head>
+    <body ng-app="fixApp">
+    	<div class="banner container">
+            <div class="container">
+    		<div class="row">
+                <div class="home col-sm-6">
+    			<h4>fixture comparison</h4>
+                </div>
+         
+                <div class="col-sm-6">
+                <img src="images/facebook-blue.png" height="35px" width="35px">
+               <!--   <img src="images/whatsup-green.png" height="35px" width="35px"> -->
+               <img src="images/twitter-blue.png" height="30px" width="30px">
+                </div>
+    		</div>
+        </div>
+    </div>
+    	
+        <div class=" container home-content">
+        	<div class="logo"> 
+        		<img src="images/logo.png" height="150px" width="150px">
+        	</div>
+            <div class="mainHeader">
+                <h2>Fixture Comparison Matrix</h2>
+            </div>
 
-	<div class="dropdown">
-		<button
-			onclick = "function()" class="dropbtn">Competitions
-		</button>
-		<div id="myDropDown" class="drop-down-content">
-			<section ng-controller="mainCtrl">
-	<div ng-repeat="e in dataset">
+            <div class="stories">
+            	<p>Fixture comparison allows you to compare the fixtures of two or more teams across different leagues. Compare teams across leagues with this amaizing comparison tool.</p>
+            </div>
+                 <div class="col-lg-2">
+               <p> 1. Step one choose a league</p>
+             </div>
+            <div class="col-lg-4">
+                  <comparison-matrix></comparison-matrix>
+             </div>
 
-     <a href="">{{e.caption}}</a> 
-		</div>
-</section>
-		</div>
-	</div>
 
-</body>
-<!-- libraries -->
-<script src="js/includes/angular.js"></script>
-<!-- modules -->
-<script src="js/app.js"></script>
+         </div>
 
-<!-- controller -->
-<script src="js/controllers/main.controller.js"></script>
+    
 
-<!-- services -->
-<script src="js/services/data.service.js"></script>
+    </body>
+    <!-- libraries -->
+    <script src="js/includes/angular.js"></script>
+    <!-- modules -->
+    <script src="js/app.js"></script>
+   
 
-</html>
+    <!-- controller -->
+    <script src="js/controllers/main.controller.js"></script>
+
+    <!-- services -->
+    <script src="js/services/data.service.js"></script>
+
+    <!-- components -->
+     <script src="js/directives/comparison-matrix/comparison.component.js"></script>
+
+
+    </html>

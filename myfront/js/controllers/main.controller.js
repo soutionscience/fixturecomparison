@@ -8,15 +8,26 @@
 
 
   	$scope.dataset =[];
+    $scope.teams =[];
+   
+   
 
      this.$onInit = function(){
+       $scope.competionID = '444'
      	dataService.getLeagues().then(function(result){
      		$scope.dataset = result.data;
-     		console.log(result)
+        console.log($scope.competionID)
+     	
 
      	});
+          dataService.getTeams($scope.competionID).then(function(result){
+        $scope.teams = result.data;
+       
+
+      });
 
      	console.log($scope.dataset)
+      console.log($scope.teams)
      }
 
   }
