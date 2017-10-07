@@ -37,11 +37,25 @@ body{
 	border-radius: 5%;
 */
 }
+select {
+	
+	background: transparent;
+   border-bottom: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
 
 
 /*mobile browsers house keeping*/
 @media (max-width: 767px) {                  
    .home {
       display: none;
+   }
+   select{
+   	font-size: 8px;
+   	width: 100px;
+   	padding: 0;
    }
 }
