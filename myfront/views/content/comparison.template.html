@@ -1,8 +1,6 @@
 
 <section ng-controller="mainCtrl as ctrl">
-<!-- <select ng-model="competionID" ng-options="x.caption for x in dataset  track by x.caption">{{x.id}} -->
-<!-- <select ng-options="x  as x.caption for x in dataset track by x.id" ng-model="selected" ng-click="ctrl.selectedLg(selected)">{{selected}}
- -->
+ 
  <select ng-model="selected" ng-change="ctrl.selectedLg(selected)">
  	<option  ng-repeat="x in dataset"   value="{{x.id}}">{{x.caption}}</option>
  	
@@ -24,40 +22,3 @@
 <section>
 	<button ng-click="addLimit()">Add More</button>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section ng-controller="testCtrl">
-
-<!-- 	<select  ng-model="value" ng-options="item as item.label for item in items track by item.id" ng-model="selected" ng-value="x.id">
-buya</select> -->
-
-<!-- <div>
-  <form name="myForm">
-    <label for="repeatSelect"> Repeat select: </label>
-    <select name="repeatSelect" id="repeatSelect" 
-    ng-model="data.model" ng-change="mytest(data.model)">
-      <option  ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
-    </select>
-  </form>
-  <hr>
-  <tt>model = {{data.model}}</tt><br/>
-</div> -->
-	
-</section>
-

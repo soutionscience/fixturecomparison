@@ -1,0 +1,24 @@
+
+<section ng-controller="mainCtrl as ctrl">
+ 
+ <select ng-model="selected" ng-change="ctrl.selectedAwLg(selected)">
+ 	<option  ng-repeat="x in awayDataset"   value="{{x.id}}">{{x.caption}}</option>
+ 	
+ </select>
+
+  <select ng-model="selectedteams" ng-change="ctrl.selectedTm(selectedteams)">
+ 	<option  ng-repeat="t in Awteams"   value="{{t._links.fixtures.href}}">{{t.name}}</option>
+ 	
+ </select>
+
+ <section>
+ 	<div class="fixtures">
+ 		<div ng-repeat="e in fixturesAw | limitTo : limit">{{e.date | date :  "dd.MM.y"}}</div>
+ 	</div>
+
+ </section>
+
+
+<section>
+	<button ng-click="addLimit()">Add More</button>
+</section>
