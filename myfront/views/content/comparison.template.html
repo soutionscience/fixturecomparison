@@ -1,24 +1,37 @@
 
-<section ng-controller="mainCtrl as ctrl">
+<section class= "comparison" ng-controller="mainCtrl as ctrl">
  
- <select ng-model="selected" ng-change="ctrl.selectedLg(selected)">
- 	<option  ng-repeat="x in dataset"   value="{{x.id}}">{{x.caption}}</option>
- 	
- </select>
+		 <select ng-model="selected" ng-change="ctrl.selectedLg(selected)">
+		 	<option  ng-repeat="x in dataset"   value="{{x.id}}">{{x.caption}}</option>
+		  </select>
 
-  <select ng-model="selectedteams" ng-change="ctrl.selectedTm(selectedteams)">
- 	<option  ng-repeat="t in teams"   value="{{t._links.fixtures.href}}">{{t.name}}</option>
- 	
- </select>
+		  <select 
+		  ng-model="selectedteams" ng-change="ctrl.selectedTm(selectedteams)">
+		 	<option  ng-repeat="t in teams" 
+		 	         value= "t.teams._links.self.href" 
+		 	      >{{t.name}}</option>
+		   </select>
 
- <section>
- 	<div class="fixtures">
- 		<div ng-repeat="e in fixtures | limitTo : limit">{{e.date | date :  "dd.MM.y"}}</div>
- 	</div>
+			 <section class="matrix">
+			 	
+			 	<div class="fixtures">
 
- </section>
+			 	 <div class="headers">
+			 		<div><p>Date</p></div>
+			 		<div><p>Venue</p></div>
+			 		<div><p>Team</p></div>
+			 	</div>
+			 		<div ng-model="selected" ng-repeat="e in fixtures | limitTo : limit">
+			 	
+                       <div class="date">{{e.date | date}}| {{e.status}}</div>
+                       
+              </div>
+			</div>
+			  </section>
 
 
-<section>
+
+<section class="addLimit">
 	<button ng-click="addLimit()">Add More</button>
+</section>
 </section>

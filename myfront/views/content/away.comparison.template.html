@@ -1,5 +1,5 @@
 
-<section ng-controller="mainCtrl as ctrl">
+<section class="comparison" ng-controller="mainCtrl as ctrl">
  
  <select ng-model="selected" ng-change="ctrl.selectedAwLg(selected)">
  	<option  ng-repeat="x in awayDataset"   value="{{x.id}}">{{x.caption}}</option>
@@ -11,14 +11,24 @@
  	
  </select>
 
- <section>
+ <section class="matrix">
  	<div class="fixtures">
  		<div ng-repeat="e in fixturesAw | limitTo : limit">{{e.date | date :  "dd.MM.y"}}</div>
+        <div class="headers">
+ 		<div><p>Date</p></div>
+ 		<div><p>Venue</p></div>
+ 		<div><p>Team</p></div>
+ 	</div>
+ 	<div class="content">
+ 		<div><p>Nov 9</p></div>
+ 		<div><p>Home</p></div>
+ 		<div><p>Chelsea Fc</p></div>
+ 	</div>
  	</div>
 
  </section>
 
 
-<section>
+<section class="addLimit">
 	<button ng-click="addLimit()">Add More</button>
 </section>

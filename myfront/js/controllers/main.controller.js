@@ -19,9 +19,12 @@
 
       // home team
 
-       $scope.dataset =[];
+     $scope.dataset =[];
      $scope.teams =[];
-      $scope.fixtures=[];
+     $scope.fixtures=[];
+     $scope.choosenHomeTeam =[];
+     $scope.selectedteams
+
      dataService.getLeagues().then(function(result){
      $scope.dataset = result.data;
      $scope.awayDataset= result.data
@@ -32,7 +35,7 @@
       this.selectedLg= function(league){
       dataService.getTeams(league).then(function(result){
         $scope.teams = result.data.teams;
-        // console.log($scope.teams)
+       //console.log("can we get team "+ $scope.teams[0].name)
       });
  }
        //set league for away team
@@ -43,20 +46,31 @@
       });
  }
        //set fixtures for home team
-       this.selectedTm = function(team){
-        $scope.limit = fixtureLimit
-    
-        dataService.getFixtures(team).then(function(result){
-          $scope.fixtures= result.data.fixtures
-          console.log($scope.fixtures)
         
-        })
+        this.selectedTm = function(team){
+        $scope.limit = fixtureLimit;
+       
+        var res=[team+""]
+     
+        
+         console.log("this is the team;" + res);
+      
+    
+        // dataService.getFixtures(url).then(function(result){
+        //   $scope.fixtures= result.data.fixtures
+        
+
+        
+        // })
+
          
       }
+
      //set fixtures for way team
 
            this.selectedAwTm = function(team){
         $scope.limit = fixtureLimit
+
         
         dataService.getFixtures(team).then(function(result){
           $scope.fixturesAw= result.data.fixtures

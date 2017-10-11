@@ -37,6 +37,14 @@
  	 	})
  	 }
 
+  service.getTeamData = function(data){
+  	return $http({
+  		url:(data)
+  	})
+  }
+
  }
+
+
 
 })();
