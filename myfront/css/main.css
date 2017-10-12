@@ -20,13 +20,27 @@ body{
    padding: 5px; 
    width: 268px;}*/
 
-.stories .comparison-matrix .comparison{ display: inline; float: left; margin-right: 1px;  }
-.comparison{background-color: #EEEEEE; border: #BDBDBD solid 1px; border-radius: 5px;}
-.comparison .matrix .fixtures .headers div{ display:inline; float: left;  margin-right: 8px;}
+.stories .comparison-matrix div{ display: inline; float: left; margin-right: 1px;  }
+.comparison{background-color: #EEEEEE; border: #BDBDBD solid 1px; border-radius: 5px; padding: 4px; margin-right: 4px;}
 
-/**/
-/*.comparison .matrix .fixtures .content div{ display: inline; float: left; margin-right: 8px; }
-*/.comparison .matrix .fixtures .date{clear: left;  background-color: red; }
+.comparison select{border: 1.5px solid #1995AD; border-radius: 4px; margin-bottom: 8px; width: 300px; height: 30px;}
+
+
+.comparison .matrix .fixtures .headers { border-bottom: .5px solid #1995AD; width: 100%; padding-bottom: 2px; margin-bottom: 4px; }
+
+.comparison .matrix .fixtures .headers .date{ float: left;  margin-right: 8px; width: 75px; padding-left:8px;}
+.comparison .matrix .fixtures .headers .location{ float: left;  margin-right: 8px; width: 40px; padding-left:0px;}
+.comparison .matrix .fixtures .headers .against{ float: left;  margin-right: 8px; width: 40px; padding-left:2px;}
+
+.comparison .matrix .fixtures .results div { float: left;  margin-right: 8px;} 
+
+.comparison .matrix .fixtures .results .date{ background-color: #BCBABE; border: #1995AD solid 1px; border-radius: 2px;  width: 75px; padding: 2px;}
+.comparison .matrix .fixtures .results .location { text-align: center; padding:2px; border: #CC6600 solid 1.5px; border-radius: 2px;  background-color: white; width: 20px; margin-right: 20px;}
+.comparison .matrix .fixtures .results .against{ width: 100px; }
+ .comparison .matrix .fixtures .against { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;}
+
+
+
 
 .comparison .addLimit{clear: left}
 
@@ -50,4 +64,12 @@ body{
    .comparison{
    	width: 100%;
    }
+   .comparison .matrix .fixtures .headers div{  width: 25px; padding-left:2px;}
+   .comparison .matrix .fixtures .against { max-width: 75px;}
+}
+
+@media(min-width: 768px){
+/*  .comparison .matrix .fixtures .results div { width: 75px; padding-left:8px;}*/
+  /* .comparison .matrix .fixtures .against { max-width: 100%;}*/
+
 }

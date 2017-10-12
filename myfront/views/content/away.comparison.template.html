@@ -1,7 +1,7 @@
 
 <section class="comparison" ng-controller="mainCtrl as ctrl">
  
- <select ng-model="selected" ng-change="ctrl.selectedAwLg(selected)">
+ <select ng-model="selected" ng-change="ctrl.selectedAwLg(selected)" placeholder="choose league">
  	<option  ng-repeat="x in awayDataset"   value="{{x.id}}">{{x.caption}}</option>
  	
  </select>
@@ -20,9 +20,9 @@
  		<div><p>Team</p></div>
  	</div>
  	<div class="content">
- 		<div><p>Nov 9</p></div>
+ 		<!-- <div><p>Nov 9</p></div>
  		<div><p>Home</p></div>
- 		<div><p>Chelsea Fc</p></div>
+ 		<div><p>Chelsea Fc</p></div> -->
  	</div>
  	</div>
 

@@ -7,7 +7,10 @@
   	console.log("test")
 
     $scope.selected = "mine"
-    var fixtureLimit =5
+    var fixtureLimit;
+
+
+    var hometeamData;
   	
     this.$onInit = function(){
 
@@ -24,6 +27,7 @@
      $scope.fixtures=[];
      $scope.choosenHomeTeam =[];
      $scope.selectedteams
+     
 
      dataService.getLeagues().then(function(result){
      $scope.dataset = result.data;
@@ -50,13 +54,59 @@
         this.selectedTm = function(team){
         $scope.limit = fixtureLimit;
        
-        var res=[team+""]
-     
+        dataService.getTeamData(team).then(function(result){
+          $scope.hometeamData = result.data;
+            var homeurl = $scope.hometeamData._links.self.href
+          console.log("the home team data is: "+ $scope.hometeamData.name)
+          $scope.homeTeamName = $scope.hometeamData.name
         
-         console.log("this is the team;" + res);
+
+          dataService.geTeamSpecData(homeurl).then(function(result){
+            $scope.homeDataId = result.data._links.fixtures.href;
+            var fixturesUrl = $scope.homeDataId;
+            console.log("the fixtures :"+ fixturesUrl)
+
+             dataService.getFixtures(fixturesUrl).then(function(result){
+              $scope.fixtures= result.data.fixtures;
+              var homefixture = result.data.fixtures[0].homeTeamName
+               $scope.venue=[];
+               $scope.against =[]
+
+                for (var i = 0; i < $scope.fixtures.length; i++) {
+                  
+                   
+                 if ($scope.fixtures[i].homeTeamName == $scope.homeTeamName) {
+                  $scope.venue.push({"location":"H"})
+                  $scope.against.push({"team" : $scope.fixtures[i].awayTeamName} )
+                  
+
+                 } 
+                 else{
+                  $scope.venue.push({"location":"A"})
+                  $scope.against.push({"team" : $scope.fixtures[i].homeTeamName} )
+                 
+                 }
+                }
+                // $scope.determineVenue = function(venue){
+                //   console.log("its been called with: "+ venue)
+                //   if(venue == $scope.hometeamData.name){
+                //     $scope.venue ="H"
+
+                //   }
+                //   else 
+                // {
+                //   $scope.venue ="A"
+                // }
+
+                // }
+              
+             })
+          });
+        })
+     
       
     
-        // dataService.getFixtures(url).then(function(result){
+        // dataService.getFixtures($scope.hometeamData._links.self.href).then(function(result){
         //   $scope.fixtures= result.data.fixtures
         
 

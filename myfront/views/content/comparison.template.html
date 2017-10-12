@@ -1,32 +1,54 @@
 
 <section class= "comparison" ng-controller="mainCtrl as ctrl">
- 
-		 <select ng-model="selected" ng-change="ctrl.selectedLg(selected)">
+         <div>
+		 <select  class="league" ng-model="selected" ng-change="ctrl.selectedLg(selected)">
 		 	<option  ng-repeat="x in dataset"   value="{{x.id}}">{{x.caption}}</option>
 		  </select>
+           </div>
 
-		  <select 
-		  ng-model="selectedteams" ng-change="ctrl.selectedTm(selectedteams)">
-		 	<option  ng-repeat="t in teams" 
-		 	         value= "t.teams._links.self.href" 
-		 	      >{{t.name}}</option>
+           <div style="clear:both; display:block"></div>
+         <div>
+		  <select  class="teams"  ng-model="selectedteams" ng-change="ctrl.selectedTm(selectedteams)" width: "20px"; >
+
+		 	<option  ng-repeat="t in teams" value="{{t._links.self.href}}" >{{t.name}}</option>
+		 	<option> Chelsea </option>
+
+
 		   </select>
+		   </div>
+
 
 			 <section class="matrix">
 			 	
+			 	<div style="clear:both; display:block"></div>
 			 	<div class="fixtures">
 
-			 	 <div class="headers">
-			 		<div><p>Date</p></div>
-			 		<div><p>Venue</p></div>
-			 		<div><p>Team</p></div>
-			 	</div>
-			 		<div ng-model="selected" ng-repeat="e in fixtures | limitTo : limit">
-			 	
-                       <div class="date">{{e.date | date}}| {{e.status}}</div>
-                       
-              </div>
-			</div>
+				 	 <div class="headers">
+				 		<div class="date"><p>Date</p></div>
+				 		<div class="location"><p>Venue</p></div>
+				 		<div class="against"><p>Team</p></div>
+				 	</div>
+				 	<div style="clear:both; display:block"></div>
+				 	<div class="results">
+				 		<div>
+	                       <!-- <p ng-model="selected" ng-repeat="e in fixtures | limitTo :10" class="date">{{e.date | date: "M/d/yy"}}</p> -->
+	                       <p class="date">09/01/1986</p>
+	                       <p class="date">23/1/2017</p>
+	                        
+				 		</div>
+				 	
+				 		<div>
+				 			<p class="location" ng-repeat="p in venue| limitTo :10">{{p.location}}</p>
+				 			<p class="location">A</p>
+				 			<p class="location">H</p>
+				 		</div>
+				 		<div>
+				 			<p class="against" ng-repeat="a in against| limitTo :10">{{a.team}}</p>
+				 			<p class="against">Manchester city</p>
+				 			<p class="against">Arsenal FC</p>
+				 		</div>
+			        </div>
+		     </div>
 			  </section>
 
 

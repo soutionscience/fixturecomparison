@@ -39,7 +39,20 @@
 
   service.getTeamData = function(data){
   	return $http({
-  		url:(data)
+  		headers:{'X-Auth-Token': 'a0e3c08f477f4a7c826355dfeaf56857'},
+ 	 		method: "Get",
+ 	 		dataType:'json',
+ 	 		url:(data)
+  	})
+  }
+
+  service.geTeamSpecData = function(data){
+  	return $http({
+  		headers:{'X-Auth-Token': 'a0e3c08f477f4a7c826355dfeaf56857'},
+ 	 		method: "Get",
+ 	 		dataType:'json',
+ 	 		url:(data)
+
   	})
   }
 
