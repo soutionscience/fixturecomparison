@@ -11,7 +11,7 @@
 		  <select  class="teams"  ng-model="selectedteams" ng-change="ctrl.selectedTm(selectedteams)" width: "20px"; >
 
 		 	<option  ng-repeat="t in teams" value="{{t._links.self.href}}" >{{t.name}}</option>
-		 	<option> Chelsea </option>
+		 	
 
 
 		   </select>
@@ -31,21 +31,18 @@
 				 	<div style="clear:both; display:block"></div>
 				 	<div class="results">
 				 		<div>
-	                       <!-- <p ng-model="selected" ng-repeat="e in fixtures | limitTo :10" class="date">{{e.date | date: "M/d/yy"}}</p> -->
-	                       <p class="date">09/01/1986</p>
-	                       <p class="date">23/1/2017</p>
+	                       <p ng-model="selected" ng-repeat="e in fixtures | limitTo :limit" class="date">{{e.date | date: "M/d/yy"}}</p>
+	                       
 	                        
 				 		</div>
 				 	
 				 		<div>
-				 			<p class="location" ng-repeat="p in venue| limitTo :10">{{p.location}}</p>
-				 			<p class="location">A</p>
-				 			<p class="location">H</p>
+				 			<p class="location" ng-repeat="p in venue| limitTo :limit">{{p.location}}</p>
+				 		
 				 		</div>
 				 		<div>
-				 			<p class="against" ng-repeat="a in against| limitTo :10">{{a.team}}</p>
-				 			<p class="against">Manchester city</p>
-				 			<p class="against">Arsenal FC</p>
+				 			<p class="against" ng-repeat="a in against| limitTo :limit">{{a.team}}</p>
+				 			
 				 		</div>
 			        </div>
 		     </div>

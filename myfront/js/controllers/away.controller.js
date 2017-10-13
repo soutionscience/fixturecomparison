@@ -1,10 +1,10 @@
 (function(){
-  angular.module('fixApp').controller('mainCtrl', mainCtrl)
+  angular.module('fixApp').controller('awayCtrl', awayCtrl)
 
-  mainCtrl.$inject =['dataService', '$scope']
+  awayCtrl.$inject =['dataService', '$scope']
 
-  function mainCtrl(dataService, $scope){
-  	console.log("test")
+  function awayCtrl(dataService, $scope){
+    console.log("test")
 
     $scope.selected = "mine"
     var fixtureLimit =5;
@@ -12,7 +12,7 @@
 
 
     var hometeamData;
-  	
+    
     this.$onInit = function(){
 
 
@@ -21,6 +21,11 @@
      $scope.fixtures=[];
      $scope.choosenHomeTeam =[];
      $scope.selectedteams
+     var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1; //January is 0!
+      var yyyy = today.getFullYear();
+     console.log("todays date is :" +dd +'/'+mm+'/'+yyyy)
      
 
      dataService.getLeagues().then(function(result){

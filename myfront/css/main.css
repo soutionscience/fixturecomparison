@@ -34,9 +34,10 @@ body{
 
 .comparison .matrix .fixtures .results div { float: left;  margin-right: 8px;} 
 
-.comparison .matrix .fixtures .results .date{ background-color: #BCBABE; border: #1995AD solid 1px; border-radius: 2px;  width: 75px; padding: 2px;}
+.comparison .matrix .fixtures .results .date{ background-color: #BCBABE; border: #1995AD solid 1px; border-radius: 2px;  width: 75px; padding: 2.5px;}
 .comparison .matrix .fixtures .results .location { text-align: center; padding:2px; border: #CC6600 solid 1.5px; border-radius: 2px;  background-color: white; width: 20px; margin-right: 20px;}
-.comparison .matrix .fixtures .results .against { width: 100px;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;}
+.comparison .matrix .fixtures .results .location.home{border-color: red;}
+.comparison .matrix .fixtures .results .against {  padding: 3.5px;}
 
 
 
@@ -76,11 +77,10 @@ body{
 
    .comparison .matrix .fixtures .results .date{width: 50px; font-size: .6em; margin-right:0px;}
    .comparison .matrix .fixtures .results .location{width: 20px; font-size: .6em; margin-right: 2px;}
-   .comparison .matrix .fixtures .results .against{ width: 50px;}
+   .comparison .matrix .fixtures .results .against{ width: 50px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 250px;}
 }
 
 @media(min-width: 768px){
-/*  .comparison .matrix .fixtures .results div { width: 75px; padding-left:8px;}*/
-  /* .comparison .matrix .fixtures .against { max-width: 100%;}*/
+.comparison .matrix .fixtures .results .against {}
 
 }
