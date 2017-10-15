@@ -1,9 +1,9 @@
 (function(){
   angular.module('fixApp').controller('awayCtrl', awayCtrl)
 
-  awayCtrl.$inject =['dataService', '$scope']
+  awayCtrl.$inject =['dataService', '$scope', 'awfilter']
 
-  function awayCtrl(dataService, $scope){
+  function awayCtrl(dataService, $scope, awfilter){
     console.log("test")
 
     $scope.selected = "mine"
@@ -11,9 +11,12 @@
     $scope.class="location home"
 
 
+
     var hometeamData;
     
     this.$onInit = function(){
+          $scope.venue=[];
+         $scope.against =[]
 
 
      $scope.dataset =[];
@@ -21,13 +24,7 @@
      $scope.fixtures=[];
      $scope.choosenHomeTeam =[];
      $scope.selectedteams
-     var today = new Date();
-      var dd = today.getDate();
-      var mm = today.getMonth()+1; //January is 0!
-      var yyyy = today.getFullYear();
-     console.log("todays date is :" +dd +'/'+mm+'/'+yyyy)
-     
-
+  
      dataService.getLeagues().then(function(result){
      $scope.dataset = result.data;
      $scope.awayDataset= result.data
@@ -59,10 +56,11 @@
             console.log("the fixtures :"+ fixturesUrl)
 
              dataService.getFixtures(fixturesUrl).then(function(result){
-              $scope.fixtures= result.data.fixtures;
+              unfiltered= result.data.fixtures;
               var homefixture = result.data.fixtures[0].homeTeamName
-               $scope.venue=[];
-               $scope.against =[]
+             $scope.fixtures =awfilter.filterdDates(unfiltered)
+
+           
 
                 for (var i = 0; i < $scope.fixtures.length; i++) {
                   

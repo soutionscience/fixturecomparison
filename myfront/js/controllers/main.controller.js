@@ -1,14 +1,23 @@
 (function(){
   angular.module('fixApp').controller('mainCtrl', mainCtrl)
 
-  mainCtrl.$inject =['dataService', '$scope']
+  mainCtrl.$inject =['dataService', '$scope', 'filter']
 
-  function mainCtrl(dataService, $scope){
+  function mainCtrl(dataService, $scope , filter){
   	console.log("test")
 
     $scope.selected = "mine"
     var fixtureLimit =5;
     $scope.class="location home"
+      $scope.dataset =[];
+     $scope.teams =[];
+     $scope.fixtures=[];
+     $scope.choosenHomeTeam =[];
+     $scope.selectedteams;
+       $scope.venue=[];
+      $scope.against =[]
+         var unfiltered =''
+
 
 
     var hometeamData;
@@ -16,11 +25,7 @@
     this.$onInit = function(){
 
 
-     $scope.dataset =[];
-     $scope.teams =[];
-     $scope.fixtures=[];
-     $scope.choosenHomeTeam =[];
-     $scope.selectedteams
+   
      
 
      dataService.getLeagues().then(function(result){
@@ -54,14 +59,16 @@
             console.log("the fixtures :"+ fixturesUrl)
 
              dataService.getFixtures(fixturesUrl).then(function(result){
-              $scope.fixtures= result.data.fixtures;
+               unfiltered= result.data.fixtures;
               var homefixture = result.data.fixtures[0].date;
               console.log(homefixture)
 
 
+              $scope.fixtures = filter.filterdDates(unfiltered)
 
-               $scope.venue=[];
-               $scope.against =[]
+
+
+             
 
 
 
