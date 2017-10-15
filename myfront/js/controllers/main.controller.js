@@ -55,9 +55,17 @@
 
              dataService.getFixtures(fixturesUrl).then(function(result){
               $scope.fixtures= result.data.fixtures;
-              var homefixture = result.data.fixtures[0].homeTeamName
+              var homefixture = result.data.fixtures[0].date;
+              console.log(homefixture)
+
+
+
                $scope.venue=[];
                $scope.against =[]
+
+
+
+
 
                 for (var i = 0; i < $scope.fixtures.length; i++) {
                   
