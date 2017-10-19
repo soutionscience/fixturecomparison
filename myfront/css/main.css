@@ -56,16 +56,16 @@ body{
 
 /*mobile browsers house keeping*/
 @media (max-width: 767px) {                  
-   .home {display: none;}
+ 
 
    p{font-size: .75em;}
 
    select{font-size: 8px; width: 25%; padding: 0;
    }
 
-   .step1{
+/*   .step1{
    	display: none;
-   }
+   }*/
    .comparison{
    	width: 100%;
    }
