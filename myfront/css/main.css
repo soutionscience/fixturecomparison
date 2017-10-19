@@ -56,7 +56,7 @@ body{
 
 /*mobile browsers house keeping*/
 @media (max-width: 767px) {                  
-   .home {display: none;}
+
 
    p{font-size: .75em;}
 
