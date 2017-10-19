@@ -35,9 +35,14 @@ body{
 .comparison .matrix .fixtures .results div { float: left;  margin-right: 8px;} 
 
 .comparison .matrix .fixtures .results .date{ background-color: #BCBABE; border: #1995AD solid 1px; border-radius: 2px;  width: 75px; padding: 2.5px;}
-.comparison .matrix .fixtures .results .location { text-align: center; padding:2px; border: #CC6600 solid 1.5px; border-radius: 2px;  background-color: white; width: 20px; margin-right: 20px;}
-.comparison .matrix .fixtures .results .location.home{border-color: red;}
+.comparison .matrix .fixtures .results .location { text-align: center; padding:2px; border: solid green 1.5px; border-radius: 2px;  background-color: white; width: 20px; margin-right: 20px;}
+
 .comparison .matrix .fixtures .results .against {  padding: 3.5px;}
+.comparison .matrix .fixtures .results .away{border-color: green;}
+
+.comparison .matrix .fixtures .results .home{border-color: red;}
+
+
 
 
 

@@ -85,7 +85,7 @@
 
                  } 
                  else{
-                  $scope.venue.push({"location":"A"})
+                  $scope.venue.push({"location":"A", "class": "away"})
                   $scope.against.push({"team" : $scope.fixtures[i].homeTeamName} )
                   $scope.class="location away";
                  
