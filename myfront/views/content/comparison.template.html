@@ -35,13 +35,16 @@
 	                       
 	                        
 				 		</div>
-				 	
 				 		<div>
-				 			<p class="location" ng-repeat="p in venue| limitTo :limit">{{p.location}}</p>
+				 	
+				 		<div >
+				 			<p ng-repeat="p in venue| limitTo :limit" class=" location {{p.class}}" >{{p.location}}</p>
+
 				 		
 				 		</div>
+				 		</div>
 				 		<div>
-				 			<p class="against" ng-repeat="a in against| limitTo :limit">{{a.team}}</p>
+				 			<p id="tester" class="against" ng-repeat="a in against| limitTo :limit">{{a.team}}</p>
 				 			
 				 		</div>
 			        </div>

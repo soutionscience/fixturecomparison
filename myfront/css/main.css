@@ -34,15 +34,20 @@ body{
 
 .comparison .matrix .fixtures .results div { float: left;  margin-right: 8px;} 
 
+
 .comparison .matrix .fixtures .results .date{ background-color: #BCBABE; border: #1995AD solid 1px; border-radius: 2px;  width: 75px; padding: 2.5px;}
-.comparison .matrix .fixtures .results .location { text-align: center; padding:2px; border: #CC6600 solid 1.5px; border-radius: 2px;  background-color: white; width: 20px; margin-right: 20px;}
-.comparison .matrix .fixtures .results .location.home{border-color: red;}
+.comparison .matrix .fixtures .results .location { text-align: center; padding:2px; border: solid 1.5px; border-radius: 2px;  background-color: white; width: 20px; margin-right: 20px;}
+.comparison .matrix .fixtures .results .home{background-color : green; color: white}
+.comparison .matrix .fixtures .results .away{background-color: red; color: white}
 .comparison .matrix .fixtures .results .against {  padding: 3.5px;}
 
-
+.away{border: red solid }
+.home{border: green solid;}
 
 
 .comparison .addLimit{clear: left}
+
+.footer{ background-color: #CC6600; width: 100%; height: 50px; margin-top: 8px; }
 
 
 
@@ -76,8 +81,13 @@ body{
 
 
    .comparison .matrix .fixtures .results .date{width: 50px; font-size: .6em; margin-right:0px;}
-   .comparison .matrix .fixtures .results .location{width: 20px; font-size: .6em; margin-right: 2px;}
-   .comparison .matrix .fixtures .results .against{ width: 50px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 250px;}
+   .comparison .matrix .fixtures .results .location{width: 15px; font-size: .6em; margin-right: 2px;}
+   .comparison .matrix .fixtures .results .home{color: black;}
+   .comparison .matrix .fixtures .results .away{color: black}
+
+  
+
+ .comparison .matrix .fixtures .results .against{ width: 50px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 250px;}
 }
 
 @media(min-width: 768px){

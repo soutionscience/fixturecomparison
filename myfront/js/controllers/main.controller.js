@@ -1,9 +1,9 @@
 (function(){
   angular.module('fixApp').controller('mainCtrl', mainCtrl)
 
-  mainCtrl.$inject =['dataService', '$scope', 'filter']
+  mainCtrl.$inject =['dataService', '$scope', 'filter', 'compare']
 
-  function mainCtrl(dataService, $scope , filter){
+  function mainCtrl(dataService, $scope , filter, compare){
   	console.log("test")
 
     $scope.selected = "mine"
@@ -30,16 +30,19 @@
 
      dataService.getLeagues().then(function(result){
      $scope.dataset = result.data;
-     $scope.awayDataset= result.data
+    // $scope.awayDataset= result.data
      console.log($scope.dataset)
-     $scope.selected =  $scope.dataset[1].caption;
+    // $scope.selected =  $scope.dataset[1].caption;
       });
           
       this.selectedLg= function(league){
+        console.log("this is the selected league: "+ league)
+
       dataService.getTeams(league).then(function(result){
         $scope.teams = result.data.teams;
        //console.log("can we get team "+ $scope.teams[0].name)
       });
+      compare.leagueScore(league)
  }
 
         
@@ -85,7 +88,7 @@
 
                  } 
                  else{
-                  $scope.venue.push({"location":"A"})
+                  $scope.venue.push({"location":"A", "class": "away"})
                   $scope.against.push({"team" : $scope.fixtures[i].homeTeamName} )
                   $scope.class="location away";
                  
