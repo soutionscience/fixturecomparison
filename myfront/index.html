@@ -11,19 +11,24 @@
    <link href="https://fonts.googleapis.com/css?family=Dosis|Lato" rel="stylesheet">
     <head>
     	<title>Fixture Comparison</title>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4858985102065846",
+    enable_page_level_ads: true
+  });
+</script>
     </head>
     <body ng-app="fixApp">
     	<div class="banner container">
             <div class="container">
     		<div class="row">
-                <div class="home col-sm-6">
+                <div class="col-sm-6">
     			<h4>fixture comparison</h4>
                 </div>
          
                 <div class="col-sm-6">
-                <img src="images/facebook-blue.png" height="35px" width="35px">
-               <!--   <img src="images/whatsup-green.png" height="35px" width="35px"> -->
-               <img src="images/twitter-blue.png" height="30px" width="30px">
+                <social-media></social-media>
                 </div>
     		</div>
         </div>
@@ -36,6 +41,7 @@
             <div class="mainHeader">
                 <h2>Fixture Comparison Matrix</h2>
             </div>
+
 
             <div class="stories">
             	<p>Fixture comparison allows you to compare the fixtures of two or more teams across different leagues. Compare teams across leagues with this amaizing comparison tool.</p>
@@ -53,8 +59,14 @@
                   <awaycomparison-matrix></awaycomparison-matrix>
              </div>
          </div>
+       </div>
 
 
+         </div>
+
+         <div class="footer">
+
+           
          </div>
 
     
@@ -72,13 +84,16 @@
 
     <!-- services -->
     <script src="js/services/data.service.js"></script>
-        <script src="js/services/filter.service.js"></script>
-                <script src="js/services/away.filter.service.js"></script>
+     <script src="js/services/filter.service.js"></script>
+    <script src="js/services/away.filter.service.js"></script>
+        <script src="js/services/compare.service.js"></script>
+
 
 
     <!-- components -->
      <script src="js/directives/comparison-matrix/comparison.component.js"></script>
           <script src="js/directives/away-comparison-matrix/away.comparison.component.js"></script>
+          <script src="js/directives/social-media-buttons/social.component.js"></script>
 
 
 
