@@ -36,20 +36,10 @@ body{
 
 
 .comparison .matrix .fixtures .results .date{ background-color: #BCBABE; border: #1995AD solid 1px; border-radius: 2px;  width: 75px; padding: 2.5px;}
-<<<<<<< HEAD
-.comparison .matrix .fixtures .results .location { text-align: center; padding:2px; border: solid green 1.5px; border-radius: 2px;  background-color: white; width: 20px; margin-right: 20px;}
-
-=======
 .comparison .matrix .fixtures .results .location { text-align: center; padding:2px; border: solid 1.5px; border-radius: 2px;  background-color: white; width: 20px; margin-right: 20px;}
 .comparison .matrix .fixtures .results .home{background-color : green; color: white}
 .comparison .matrix .fixtures .results .away{background-color: red; color: white}
->>>>>>> compare
 .comparison .matrix .fixtures .results .against {  padding: 3.5px;}
-.comparison .matrix .fixtures .results .away{border-color: green;}
-
-.comparison .matrix .fixtures .results .home{border-color: red;}
-
-
 
 .away{border: red solid }
 .home{border: green solid;}
@@ -66,16 +56,16 @@ body{
 
 /*mobile browsers house keeping*/
 @media (max-width: 767px) {                  
- 
+   .home {display: none;}
 
    p{font-size: .75em;}
 
    select{font-size: 8px; width: 25%; padding: 0;
    }
 
-/*   .step1{
+   .step1{
    	display: none;
-   }*/
+   }
    .comparison{
    	width: 100%;
    }
