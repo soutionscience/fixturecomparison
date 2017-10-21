@@ -13,10 +13,8 @@
  	 		dataType: 'json',
  	 		url:('data.json')
  	 	})	
- 	 	// .then(function(response) {
-    //     return response;
-    // });
- 	 }
+ 	 
+   	 }
 
  	 service.getTeams = function(competition){
  	 	return $http({

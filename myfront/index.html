@@ -38,18 +38,28 @@
         	<div class="logo"> 
         		<img src="images/logo.png" height="150px" width="150px">
         	</div>
+        
             <div class="mainHeader">
                 <h2>Fixture Comparison Matrix</h2>
             </div>
+              <div ng-controller="mainCtrl" class="Compelogos">
+            <img ng-repeat="e in myLogos" src="{{e.logo}}" height="40px" align={{e.name}}>
+          </div>
 
 
             <div class="stories">
-            	<p>Fixture comparison allows you to compare the fixtures of two or more teams across different leagues. Compare teams across leagues with this amaizing comparison tool.</p>
+            	<p>Fixture comparison allows you to compare the fixtures of two or more teams across different leagues. Compare teams across leagues with this amazing comparison tool.</p>
          <!--    </div>
                  <div class="col-xs-2 step1">
              
              </div> -->
             <div class="comparison-matrix">
+                <div class="instrunctions">
+                    <p>1. Select a league / competition to compare across Europe.</p>
+                    <p>2. Select a team to compare</p>
+                    <p>3. Share</p>
+                    
+                </div>
                 <div>
                   
                   <comparison-matrix> </comparison-matrix>
@@ -65,6 +75,10 @@
          </div>
 
          <div class="footer">
+
+          <div class="container">
+            <h1>Follow us:</h1>
+          </div>
 
            
          </div>
@@ -86,7 +100,8 @@
     <script src="js/services/data.service.js"></script>
      <script src="js/services/filter.service.js"></script>
     <script src="js/services/away.filter.service.js"></script>
-        <script src="js/services/compare.service.js"></script>
+    <script src="js/services/compare.service.js"></script>
+    <script src="js/services/logos.service.js"></script>
 
 
 
